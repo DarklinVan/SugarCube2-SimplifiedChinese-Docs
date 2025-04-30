@@ -4,6 +4,11 @@
 
 此项目是对官方文档的汉化版本
 
+# 在线访问文档
+
+项目更新后会自动在[GithubPages](https://darklinvan.github.io/SugarCube2-SimplifiedChinese-Docs/)部署最新版
+你也可以选择本地构建自己的版本
+
 # 本地构建此文档
 
 此项目与官方项目一样，依赖node.js 16.x构建
