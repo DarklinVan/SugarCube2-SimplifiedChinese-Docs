@@ -5,7 +5,7 @@
 <header role="banner">
 <div id="header-logo"></div>
 <h1>SugarCube v2 文档</h1>
-<div>文档版本：<tt>{{.VERSION}}</tt> (文档更新时间：<time datetime="{{.ISO_DATE}}">{{.DATE}}</time>)</div>
+<div>版本：<tt>{{.VERSION}}</tt> (文档更新时间：<time datetime="{{.ISO_DATE}}">{{.DATE}}</time>)</div>
 <div>在文中搜索: <kbd>CTRL</kbd>+<kbd>F</kbd>, <kbd>CMD</kbd>+<kbd>F</kbd>, <kbd>F3</kbd></div>
 </header>
 
