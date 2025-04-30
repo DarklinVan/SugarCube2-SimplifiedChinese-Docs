@@ -119,31 +119,31 @@ $(document).one(':dialogopened', (ev) => {
 
 <!-- *********************************************************************** -->
 
-### `:dialogopening` event<!-- legacy --><span id="dialog-api-event-dialogopening"></span><!-- /legacy --> {#events-dialog-event-dialogopening}
+### `:dialogopening` 事件<!-- legacy --><span id="dialog-api-event-dialogopening"></span><!-- /legacy --> {#events-dialog-event-dialogopening}
 
-Global event triggered as the first step in opening the dialog when [`Dialog.open()`](#dialog-api-method-open) is called.
+全局事件，在调用 [`Dialog.open()`](#dialog-api-method-open) 方法时，作为打开对话框的第一步触发。
 
-#### History:
+#### 版本历史：
 
-* `v2.29.0`: Introduced.
+* `v2.29.0`：首次引入。
 
-#### Event object properties: *none*
+#### 事件对象属性：*无*
 
-<p role="note"><b>Note:</b>
-While there are no custom properties, the event is fired from the dialog's body, thus the <code>target</code> property will refer to its body element—i.e., <code>#ui-dialog-body</code>.
+<p role="note"><b>注意：</b>
+虽然没有自定义属性，但事件是从对话框的 body 元素触发的，因此 <code>target</code> 属性会指向其 body 元素 (即 <code>#ui-dialog-body</code>)。
 </p>
 
-#### Examples:
+#### 使用示例：
 
 ```javascript
-/* Execute the handler function when the event triggers. */
+/* 当事件触发时执行处理函数 */
 $(document).on(':dialogopening', (ev) => {
-	/* JavaScript code */
+	/* JavaScript 代码 */
 });
 
-/* Execute the handler function exactly once. */
+/* 仅执行一次处理函数 */
 $(document).one(':dialogopening', (ev) => {
-	/* JavaScript code */
+	/* JavaScript 代码 */
 });
 ```
 
