@@ -37,7 +37,7 @@
 
 * `v2.29.0`：首次引入。
 
-#### 事件对象属性：*None*
+#### 事件对象属性：*无*
 
 <p role="note"><b>注意：</b>
 虽然没有自定义属性，但事件是从对话框的 body 元素触发的，因此 <code>target</code> 属性会指向其 body 元素 (即 <code>#ui-dialog-body</code>)。
@@ -59,32 +59,70 @@ $(document).one(':dialogclosed', (ev) => {
 
 <!-- *********************************************************************** -->
 
-### `:dialogclosing` event<!-- legacy --><span id="dialog-api-event-dialogclosing"></span><!-- /legacy --> {#events-dialog-event-dialogclosing}
+### `:dialogclosing` 事件<!-- legacy --><span id="dialog-api-event-dialogclosing"></span><!-- /legacy --> {#events-dialog-event-dialogclosing}
 
-Global event triggered as the first step in closing the dialog when [`Dialog.close()`](#dialog-api-method-close) is called.
+全局事件，在调用 [`Dialog.close()`](#dialog-api-method-close) 方法时，作为关闭对话框的第一步触发。
 
-#### History:
+#### 版本历史：
 
-* `v2.29.0`: Introduced.
+* `v2.29.0`：首次引入。
 
-#### Event object properties: *none*
+#### 事件对象属性：*无*
 
-<p role="note"><b>Note:</b>
-While there are no custom properties, the event is fired from the dialog's body, thus the <code>target</code> property will refer to its body element—i.e., <code>#ui-dialog-body</code>.
+<p role="note"><b>注意：</b>
+虽然没有自定义属性，但事件是从对话框的 body 元素触发的，因此 <code>target</code> 属性会指向其 body 元素 (即 <code>#ui-dialog-body</code>)。
 </p>
 
-#### Examples:
+#### 使用示例：
 
 ```javascript
-/* Execute the handler function when the event triggers. */
+/* 当对话框开始关闭时执行处理函数（持续监听） */
 $(document).on(':dialogclosing', (ev) => {
-	/* JavaScript code */
+    /* 
+     * 此处编写处理逻辑
+     * ev 参数包含事件对象，可以通过 ev.target 访问对话框主体元素 (#ui-dialog-body)
+     * 适合需要持续响应对话框关闭前操作的场景
+     */
+    
+    // 示例：在控制台输出关闭信息
+    console.log('对话框正在关闭，当前内容：', ev.target.innerHTML);
+    
+    // 示例：阻止关闭操作（需特定条件）
+    if (someCondition) {
+        ev.preventDefault();
+        alert('关闭操作被阻止！');
+    }
 });
 
-/* Execute the handler function exactly once. */
+/* 当对话框开始关闭时执行处理函数（仅执行一次） */
 $(document).one(':dialogclosing', (ev) => {
-	/* JavaScript code */
+    /*
+     * 使用 .one() 方法，处理函数只会执行一次
+     * 适合只需要在首次关闭对话框时执行的操作
+     * 自动解除事件绑定，避免内存泄漏
+     */
+    
+    // 示例：记录首次关闭时间
+    const firstCloseTime = new Date().toISOString();
+    console.log('首次关闭对话框时间：', firstCloseTime);
+    
+    // 示例：显示告别信息（仅第一次关闭时显示）
+    alert('感谢使用本功能！');
 });
+
+/* 
+ * 原生 JavaScript 等效实现（需现代浏览器支持）
+ * 注意：SugarCube 原生事件需要使用 document 对象监听
+ */
+// 持续监听
+document.addEventListener(':dialogclosing', function(ev) {
+    console.log('原生方式 - 对话框正在关闭');
+});
+
+// 单次监听（使用 once 选项）
+document.addEventListener(':dialogclosing', function(ev) {
+    console.log('原生方式 - 仅触发一次');
+}, { once: true });
 ```
 
 <!-- *********************************************************************** -->
