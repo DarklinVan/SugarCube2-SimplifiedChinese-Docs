@@ -1,59 +1,59 @@
 <!-- ***********************************************************************************************
-	Events
+	事件系统
 ************************************************************************************************ -->
-# Events {#events}
+# 事件系统 {#events}
 
-Events are messages that are sent (a.k.a.: fired, triggered) to notify code that something has taken place, from player interactions to automated happenings.  Each event is represented by an object that has properties that may be used to get additional information about what happened.
+事件(Events)是用于通知代码某些行为发生的消息机制（例如：触发、广播），涵盖从玩家交互到自动化流程的各种场景。每个事件对象都包含特定属性，可用于获取事件相关的附加信息。
 
-This section offers a list of SugarCube-specific events, triggered at various points during story operation.
+本章节列出了 SugarCube 在故事运行过程中触发的各类专属事件。
 
-<p role="note" class="see"><b>See Also:</b>
-For standard browser/DOM events, see the <a href="https://developer.mozilla.org/en-US/docs/Web/Events"><i>Event reference</i> @MDN</a>.
+<p role="note" class="see"><b>参考阅读：</b>
+关于标准浏览器/DOM事件，请查阅 MDN 的<a href="https://developer.mozilla.org/en-US/docs/Web/Events"><i>事件参考手册</i></a>。
 </p>
 
 
 <!-- ***************************************************************************
-	`Dialog` Events
+	对话框事件
 **************************************************************************** -->
-## `Dialog` Events {#events-dialog}
+## 对话框事件 {#events-dialog}
 
-`Dialog` events allow the execution of JavaScript code at specific points during the opening and closing of dialogs.
+对话框事件允许在对话框打开和关闭的特定时刻执行 JavaScript 代码。
 
-<p role="note" class="see"><b>See:</b>
-<a href="#dialog-api"><code>Dialog</code> API</a>.
+<p role="note" class="see"><b>参见：</b>
+<a href="#dialog-api"><code>Dialog</code> API</a>。
 </p>
 
 <!-- *********************************************************************** -->
 
-### `:dialogclosed` event<!-- legacy --><span id="dialog-api-event-dialogclosed"></span><!-- /legacy --> {#events-dialog-event-dialogclosed}
+### `:dialogclosed` 事件<!-- legacy --><span id="dialog-api-event-dialogclosed"></span><!-- /legacy --> {#events-dialog-event-dialogclosed}
 
-Global event triggered as the last step in closing the dialog when [`Dialog.close()`](#dialog-api-method-close) is called.
+全局事件，在调用 [`Dialog.close()`](#dialog-api-method-close) 方法时，作为关闭对话框的最后一步触发。
 
-<p role="note" class="warning"><b>Warning:</b>
-You cannot obtain data about the closing dialog from the dialog itself—e.g., title or classes—when using the <code>:dialogclosed</code> event, as the dialog has already closed and been reset by the time the event is fired.  If you need that kind of information from the dialog itself, then you may use the <a href="#events-dialog-event-dialogclosing"><code>:dialogclosing</code> event</a> instead.
+<p role="note" class="warning"><b>警告：</b>
+当使用 <code>:dialogclosed</code> 事件时，你无法从已关闭的对话框中获取数据（例如标题或类名），因为事件触发时对话框已经关闭并重置。如需获取此类信息，请改用 <a href="#events-dialog-event-dialogclosing"><code>:dialogclosing</code> 事件</a>。
 </p>
 
-#### History:
+#### 版本历史：
 
-* `v2.29.0`: Introduced.
+* `v2.29.0`：首次引入。
 
-#### Event object properties: *none*
+#### 事件对象属性：*None*
 
-<p role="note"><b>Note:</b>
-While there are no custom properties, the event is fired from the dialog's body, thus the <code>target</code> property will refer to its body element—i.e., <code>#ui-dialog-body</code>.
+<p role="note"><b>注意：</b>
+虽然没有自定义属性，但事件是从对话框的 body 元素触发的，因此 <code>target</code> 属性会指向其 body 元素 (即 <code>#ui-dialog-body</code>)。
 </p>
 
-#### Examples:
+#### 使用示例：
 
 ```javascript
-/* Execute the handler function when the event triggers. */
+/* 当事件触发时执行处理函数 */
 $(document).on(':dialogclosed', (ev) => {
-	/* JavaScript code */
+    /* JavaScript 代码 */
 });
 
-/* Execute the handler function exactly once. */
+/* 仅执行一次处理函数 */
 $(document).one(':dialogclosed', (ev) => {
-	/* JavaScript code */
+    /* JavaScript 代码 */
 });
 ```
 
