@@ -11,7 +11,7 @@
 
 <p role="note"><b>注意：</b>  
 若您发现 SugarCube 的漏洞或有改进建议，请前往其 <a href="https://github.com/tmedwards/sugarcube-2">源代码仓库</a> <a href="https://github.com/tmedwards/sugarcube-2/issues">提交新议题</a>。  
-若您发现汉化有问题或有更好的建议，请前往<a href="">汉化文档仓库</a>
+若您发现汉化有问题或有更好的建议，请前往<a href="https://github.com/DarklinVan/SugarCube2-SimplifiedChinese-Docs">汉化文档仓库</a>
 </p>
 
 ----
