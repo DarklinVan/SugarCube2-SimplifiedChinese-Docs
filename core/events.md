@@ -151,34 +151,45 @@ $(document).one(':dialogopening', (ev) => {
 <!-- ***************************************************************************
 	Navigation Events
 **************************************************************************** -->
-## Navigation Events<!-- legacy --><span id="navigation-events-tasks"></span><span id="navigation-overview"></span><span id="navigation-events"></span><span id="navigation-tasks"></span><!-- /legacy --> {#events-navigation}
+## 导航事件<!-- legacy --><span id="navigation-events-tasks"></span><span id="navigation-overview"></span><span id="navigation-events"></span><span id="navigation-tasks"></span><!-- /legacy --> {#events-navigation}
 
-Navigation events allow the execution of JavaScript code at specific points during passage navigation.
+导航事件允许在段落跳转的不同阶段执行 JavaScript 代码。
 
-In order of processing: *(for reference, this also shows the `:uiupdate` event and various special passages)*
+完整处理顺序如下（包含 `:uiupdate` 事件和各类特殊段落）：
 
-1. Passage init.  Happens before the modification of the state history.
-	1. `:passageinit` event.
-2. Passage start. Happens before the rendering of the incoming passage.
-	1. [`PassageReady` special passage](#special-passage-passageready).
-	2. `:passagestart` event.
-	3. [`PassageHeader` special passage](#special-passage-passageheader).
-3. Passage render.  Happens after the rendering of the incoming passage.
-	1. [`PassageFooter` special passage](#special-passage-passagefooter).
-	2. `:passagerender` event.
-4. Passage display.  Happens after the display—i.e., output—of the incoming passage.
-	1. [`PassageDone` special passage](#special-passage-passagedone).
-	2. `:passagedisplay` event.
-5. UI update.  Happens before the end of passage navigation.
-	1. `:uiupdate` event.
-		1. [`StoryDisplayTitle` special passage](#special-passage-storydisplaytitle).
-		2. [`StoryBanner` special passage](#special-passage-storybanner).
-		3. [`StorySubtitle` special passage](#special-passage-storysubtitle).
-		4. [`StoryAuthor` special passage](#special-passage-storyauthor).
-		5. [`StoryCaption` special passage](#special-passage-storycaption).
-		6. [`StoryMenu` special passage](#special-passage-storymenu).
-6. Passage end.  Happens at the end of passage navigation.
-	1. `:passageend` event.
+1. **段落初始化**  
+   发生在状态历史修改之前。
+   - 1.1 触发 `:passageinit` 事件
+
+2. **段落启动**  
+   发生在新段落渲染之前。
+   - 2.1 执行 [`PassageReady` 特殊段落](#special-passage-passageready)
+   - 2.2 触发 `:passagestart` 事件
+   - 2.3 执行 [`PassageHeader` 特殊段落](#special-passage-passageheader)
+
+3. **段落渲染**  
+   发生在新段落渲染完成后。
+   - 3.1 执行 [`PassageFooter` 特殊段落](#special-passage-passagefooter)
+   - 3.2 触发 `:passagerender` 事件
+
+4. **段落显示**  
+   发生在新段落内容输出到页面后。
+   - 4.1 执行 [`PassageDone` 特殊段落](#special-passage-passagedone)
+   - 4.2 触发 `:passagedisplay` 事件
+
+5. **界面更新**  
+   发生在导航结束前。
+   - 5.1 触发 `:uiupdate` 事件
+     - 5.1.1 执行 [`StoryDisplayTitle` 特殊段落](#special-passage-storydisplaytitle)
+     - 5.1.2 执行 [`StoryBanner` 特殊段落](#special-passage-storybanner)
+     - 5.1.3 执行 [`StorySubtitle` 特殊段落](#special-passage-storysubtitle)
+     - 5.1.4 执行 [`StoryAuthor` 特殊段落](#special-passage-storyauthor)
+     - 5.1.5 执行 [`StoryCaption` 特殊段落](#special-passage-storycaption)
+     - 5.1.6 执行 [`StoryMenu` 特殊段落](#special-passage-storymenu)
+
+6. **段落结束**  
+   发生在导航流程完全结束时。
+   - 6.1 触发 `:passageend` 事件
 
 <!-- *********************************************************************** -->
 
