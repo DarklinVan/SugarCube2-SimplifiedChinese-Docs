@@ -193,38 +193,38 @@ $(document).one(':dialogopening', (ev) => {
 
 <!-- *********************************************************************** -->
 
-### `:passageinit` event<!-- legacy --><span id="navigation-event-passageinit"></span><!-- /legacy --> {#events-navigation-event-passageinit}
+### `:passageinit` 事件<!-- legacy --><span id="navigation-event-passageinit"></span><!-- /legacy --> {#events-navigation-event-passageinit}
 
-Triggered before the modification of the state history.
+在状态记录修改前触发。
 
-#### History:
+#### 版本历史：
 
-* `v2.20.0`: Introduced.
-* `v2.37.0`: Moved custom properties into the event's `detail` object.
+* `v2.20.0`：首次引入。
+* `v2.37.0`：将自定义属性移至事件的 `detail` 对象中。
 
-#### Event `detail` object properties:
+#### 事件 `detail` 对象属性：
 
-`:passageinit` events have a `detail` property whose value is an object with the following properties:
+`:passageinit` 事件包含具有以下属性的 `detail` 属性：
 
-* **`passage`:** (`Passage`) The incoming passage object.  See the [`Passage` API](#passage-api) for more information.
+* **`passage`:** (Passage) 即将进入的段落对象。更多信息请参阅 [`Passage` API](#passage-api)。
 
-#### Examples:
+#### 使用示例：
 
 ```javascript
-/* Execute the handler function each time the event triggers. */
+/* 每次事件触发时执行处理函数 */
 $(document).on(':passageinit', (ev) => {
-	/* Log details about the current moment. */
-	console.group('Details about the current moment');
-	console.log('passage name:', ev.detail.passage.name);
-	console.log('passage tags:', ev.detail.passage.tags);
+	/* 记录当前时刻的详细信息 */
+	console.group('当前时刻的详细信息');
+	console.log('段落名称:', ev.detail.passage.name);
+	console.log('段落标签:', ev.detail.passage.tags);
 	console.groupEnd();
 
-	/* Do something useful here. */
+	/* 在此执行有效操作 */
 });
 
-/* Execute the handler function exactly once. */
+/* 仅执行一次处理函数 */
 $(document).one(':passageinit', (ev) => {
-	/* Do something useful here. */
+	/* 在此执行有效操作 */
 });
 ```
 
