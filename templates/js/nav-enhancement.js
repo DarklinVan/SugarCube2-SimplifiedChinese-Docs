@@ -46,8 +46,8 @@
 	}));
 
 	const createListToggle = (list, isExpanded) => {
-		const collapseTitle = 'Collapse section';
-		const expandTitle   = 'Expand section';
+		const collapseTitle = '收起内容';
+		const expandTitle   = '展开内容';
 		const toggleFn      = ev => {
 			if (
 				   ev.type === 'click'
@@ -121,8 +121,9 @@
 	});
 
 	const createColorToggle = () => {
-		const disableTitle = 'Disable code color';
-		const enableTitle  = 'Enable code color';
+		const disableTitle = '禁用代码上色';
+		const enableTitle  = '启用代码上色';
+		const buttonTitle = '代码上色';
 		const toggleFn     = ev => {
 			if (
 				   ev.type === 'click'
@@ -149,7 +150,7 @@
 		};
 		const button = document.createElement('button');
 		button.setAttribute('id', 'color-toggle');
-		button.appendChild(document.createTextNode('Code Color'));
+		button.appendChild(document.createTextNode(buttonTitle));
 
 		if (SCDocs.getConfig('codeColor') === 'inherit') {
 			button.classList.add('disabled');

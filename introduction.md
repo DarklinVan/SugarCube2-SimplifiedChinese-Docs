@@ -22,6 +22,6 @@
 
 ----
 
-**此简体中文版本由以下人员翻译**:
+**简体中文翻译贡献者（排名不分先后）**:
 
 * **DarklinVan** ([GitHub](https://github.com/DarklinVan))

@@ -14,23 +14,28 @@
 此项目与官方项目一样，依赖node.js 16.x构建
 
 首先克隆此项目到文档
+
 ```
 git clone https://github.com/DarklinVan/SugarCube2-SimplifiedChinese-Docs.git
 ```
 
 然后打开项目文件夹
+
 ```
 cd SugarCube2-SimplifiedChinese-Docs
 ```
 
 下载node.js依赖项
+
 ```
 npm install
 ```
 
 构建项目
+
 ```
 node build.js
 ```
 
-构建后的项目在```/build```文件夹下
+构建后的项目在```/build/index.html```
+可将其部署在Nginx上，也可以直接在本地用浏览器打开
