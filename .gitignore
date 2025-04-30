@@ -1,0 +1,16 @@
+# Scripts
+*.sh
+
+# Development
+build/
+docs/build/
+node_modules/
+.build
+*.code-workspace
+.tern-project
+.vscode
+
+# Miscellaneous
+_*
+CHANGELOG*
+TODO*
