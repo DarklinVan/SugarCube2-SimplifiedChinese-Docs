@@ -1,48 +1,47 @@
 <!-- ***********************************************************************************************
 	Markup
 ************************************************************************************************ -->
-# Markup {#markup}
+# 标记语法 {#markup}
 
-<p role="note"><b>Note:</b>
-Except where noted, all markup has been available since <code>v2.0.0</code>.
+<p role="note"><b>注意：</b>
+除非特别说明，所有标记语法自 <code>v2.0.0</code> 版本起可用。
 </p>
-
 
 <!-- ***************************************************************************
 	Naked Variable
 **************************************************************************** -->
-## Naked Variable {#markup-naked-variable}
+## 裸变量 {#markup-naked-variable}
 
-In addition to using one of the print macros ([`<<print>>`](#macros-macro-print), [`<<=>>`](#macros-macro-equal), [`<<->>`](#macros-macro-hyphen)) to print the values of TwineScript variables, SugarCube's naked variable markup allows printing them simply by including them within your normal passage text—i.e., variables in passage text are interpolated into a string representation of their values.
+除了使用打印宏（[`<<print>>`](#macros-macro-print)、[`<<=>>`](#macros-macro-equal)、[`<<->>`](#macros-macro-hyphen)）来输出变量值，SugarCube 的裸变量标记允许直接在段落文本中插入变量——即段落文本中的变量会被自动替换为其值的字符串表示。
 
-The following forms are supported by the naked variable markup:
+裸变量标记支持以下形式：
 
 <table>
 <thead>
 	<tr>
-		<th>Type</th>
-		<th>Syntax</th>
-		<th>Example</th>
+		<th>类型</th>
+		<th>语法</th>
+		<th>示例</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td>Simple variable</td>
+		<td>简单变量</td>
 		<td><pre><code>$variable</code></pre></td>
 		<td><pre><code>$name</code></pre></td>
 	</tr>
 	<tr>
-		<td>Property access,<br>dot notation</td>
+		<td>属性访问<br>（点号表示法）</td>
 		<td><pre><code>$variable.property</code></pre></td>
 		<td><pre><code>$thing.name</code></pre></td>
 	</tr>
 	<tr>
-		<td>Index/property access,<br>square bracket notation</td>
+		<td>索引/属性访问<br>（方括号表示法）</td>
 		<td>
-			<pre><code>$variable[numericIndex]</code></pre>
-			<pre><code>$variable["property"]</code></pre>
-			<pre><code>$variable['property']</code></pre>
-			<pre><code>$variable[$indexOrPropertyVariable]</code></pre>
+			<pre><code>$variable[数字索引]</code></pre>
+			<pre><code>$variable["属性名"]</code></pre>
+			<pre><code>$variable['属性名']</code></pre>
+			<pre><code>$variable[$索引或属性变量]</code></pre>
 		</td>
 		<td>
 			<pre><code>$thing[0]</code></pre>
@@ -54,45 +53,45 @@ The following forms are supported by the naked variable markup:
 </tbody>
 </table>
 
-If you need to print anything more complex—e.g., using a calculation, `$variable[_i + 1]`, or a method call, `$variable.someMethod()`—then you will still need to use one of the print macros.
+如需进行更复杂的操作（例如使用计算表达式：<code>$variable[_i + 1]</code>，或方法调用：<code>$variable.someMethod()</code>），仍需使用打印宏。
 
-For example:
-
-```
-/* Explicitly printing the value of $name via the <<print>> macro */
-Well hello there, <<print $name>>.
-
-/* Implicitly printing the value of $name via the naked variable markup */
-Well hello there, $name.
-
-/* Assuming $name is set to "Mr. Freeman", both should yield the following */
-Well hello there, Mr. Freeman.
-```
-
-Because variables within your passage text are transformed into their values automatically, if you actually want to output a variable as-is—i.e., without interpolation; e.g., for a tutorial, debug output, or whatever—then you'll need to escape it in some fashion.  For example:
+示例：
 
 ```
-/* Using the nowiki markup: """…""" (triple double-quotes) */
-The variable """$name""" is set to: $name
+/* 使用 <<print>> 宏显式打印 $name 的值 */
+你好啊，<<print $name>>。
 
-/* Using the nowiki markup: <nowiki>…</nowiki> */
-The variable <nowiki>$name</nowiki> is set to: $name
+/* 使用裸变量标记隐式打印 $name 的值 */
+你好啊，$name。
 
-/* Using the double dollar-sign markup (which escapes the $-sigil): $$ */
-The variable $$name is set to: $name
-
-/* Assuming $name is set to "Mr. Freeman", all of the above should yield the following */
-The variable $name is set to: Mr. Freeman
+/* 假设 $name 的值为 "Mr. Freeman"，两种方式都会输出： */
+你好啊，Mr. Freeman。
 ```
 
-Additionally, you could use the inline code markup to escape the variable, though it will also wrap the escaped variable within a `<code>` element, so it's probably best used for examples and tutorials.  For example:
+由于段落文本中的变量会自动转换为它们的值，如果您需要按原样输出变量（不进行插值，例如用于教程、调试输出等用途），则需要通过某种方式对其进行转义。例如：
 
 ```
-/* Using the inline code markup: {{{…}}} (triple curly braces) */
-The variable {{{$name}}} is set to: $name
+/* 使用 nowiki 标记："""..."""（三重双引号） */
+变量 """$name""" 的值为：$name
 
-/* Assuming $name is set to "Mr. Freeman", it should yield the following */
-The variable <code>$name</code> is set to: Mr. Freeman
+/* 使用 nowiki 标记：<nowiki>...</nowiki> */
+变量 <nowiki>$name</nowiki> 的值为：$name
+
+/* 使用双美元符号标记（转义$符号）：$$ */
+变量 $$name 的值为：$name
+
+/* 假设 $name 的值为 "Mr. Freeman"，所有示例将输出： */
+变量 $name 的值为：Mr. Freeman
+```
+
+此外，您可以使用内联代码标记来转义变量，但这样做会将转义的变量包裹在 `<code>` 元素中，因此可能最适合示例和教程使用。例如：
+
+```
+/* 使用内联代码标记：{{{...}}}（三重花括号） */
+变量 {{{$name}}} 的值为：$name
+
+/* 假设 $name 的值为 "Mr. Freeman"，将输出： */
+变量 <code>$name</code> 的值为：Mr. Freeman
 ```
 
 
