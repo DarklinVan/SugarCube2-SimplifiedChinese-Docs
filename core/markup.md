@@ -250,43 +250,43 @@ body {
 <!-- ***************************************************************************
 	HTML &amp; SVG Attribute
 **************************************************************************** -->
-## HTML &amp; SVG Attribute<!-- legacy --><span id="markup-html-attribute"></span><!-- /legacy --> {#markup-html-svg-attribute}
+## HTML &amp; SVG 属性<!-- legacy --><span id="markup-html-attribute"></span><!-- /legacy --> {#markup-html-svg-attribute}
 
-<p role="note" class="warning"><b>Warning:</b>
-None of these features work within the <a href="#markup-verbatim-html">verbatim HTML markup</a>.
+<p role="note" class="warning"><b>注意：</b>
+以下功能在<a href="#markup-verbatim-html">原始 HTML 标记</a>中均不可用。
 </p>
 
 <!-- *********************************************************************** -->
 
-### Special Attribute<!-- legacy --><span id="markup-html-attribute-special"></span><!-- /legacy --> {#markup-html-svg-attribute-special}
+### 特殊属性<!-- legacy --><span id="markup-html-attribute-special"></span><!-- /legacy --> {#markup-html-svg-attribute-special}
 
-SugarCube provides a few special HTML &amp; SVG attributes, which you may add to tags to enable special behaviors.  There are attributes for passage links, media passages, and setters.
+SugarCube 提供了一些特殊的 HTML 和 SVG 属性，您可以将它们添加到标签中以启用特殊行为。这些属性用于段落链接、媒体段落和设置器。
 
 <table>
 <thead>
 	<tr>
-		<th>Type</th>
-		<th>Attribute</th>
-		<th>Example</th>
+		<th>类型</th>
+		<th>属性</th>
+		<th>示例</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td>Passage, Link</td>
+		<td>段落链接</td>
 		<td><pre><code>data-passage</code></pre></td>
 		<td>
-			<pre><code>&lt;a data-passage=&quot;PassageName&quot;&gt;Do the thing&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a data-passage=&quot;PassageName&quot;&gt;执行操作&lt;/a&gt;</code></pre>
 			<pre><code>&lt;area shape="rect" coords="25,25,75,75" data-passage=&quot;PassageName&quot;&gt;</code></pre>
-			<pre><code>&lt;button data-passage=&quot;PassageName&quot;&gt;Do the thing&lt;/button&gt;</code></pre>
+			<pre><code>&lt;button data-passage=&quot;PassageName&quot;&gt;执行操作&lt;/button&gt;</code></pre>
 		</td>
 	</tr>
 	<tr>
-		<td>Passage, Audio</td>
+		<td>音频段落</td>
 		<td><pre><code>data-passage</code></pre></td>
 		<td><pre><code>&lt;audio data-passage=&quot;AudioPassageName&quot;&gt;</code></pre></td>
 	</tr>
 	<tr>
-		<td>Passage, Image</td>
+		<td>图片段落</td>
 		<td><pre><code>data-passage</code></pre></td>
 		<td>
 			<pre><code>&lt;img data-passage=&quot;ImagePassageName&quot;&gt;</code></pre>
@@ -294,32 +294,31 @@ SugarCube provides a few special HTML &amp; SVG attributes, which you may add to
 		</td>
 	</tr>
 	<tr>
-		<td>Passage, Source</td>
+		<td>资源段落</td>
 		<td><pre><code>data-passage</code></pre></td>
 		<td><pre><code>&lt;source data-passage=&quot;AudioOrVideoPassageName&quot;&gt;</code></pre></td>
 	</tr>
 	<tr>
-		<td>Passage, Video</td>
+		<td>视频段落</td>
 		<td><pre><code>data-passage</code></pre></td>
 		<td><pre><code>&lt;video data-passage=&quot;VideoPassageName&quot;&gt;</code></pre></td>
 	</tr>
 	<tr>
-		<td>Setter</td>
+		<td>设置器</td>
 		<td><pre><code>data-setter</code></pre></td>
 		<td>
-			<pre><code>&lt;a data-passage=&quot;PassageName&quot; data-setter=&quot;$thing to 'done'&quot;&gt;Do the thing&lt;/a&gt;</code></pre>
+			<pre><code>&lt;a data-passage=&quot;PassageName&quot; data-setter=&quot;$thing to 'done'&quot;&gt;执行操作&lt;/a&gt;</code></pre>
 			<pre><code>&lt;area shape="rect" coords="25,25,75,75" data-passage=&quot;PassageName&quot;
 	data-setter=&quot;$thing to 'done'&quot;&gt;</code></pre>
-			<pre><code>&lt;button data-passage=&quot;PassageName&quot; data-setter=&quot;$thing to 'done'&quot;&gt;Do the thing&lt;/button&gt;</code></pre>
+			<pre><code>&lt;button data-passage=&quot;PassageName&quot; data-setter=&quot;$thing to 'done'&quot;&gt;执行操作&lt;/button&gt;</code></pre>
 		</td>
 	</tr>
 </tbody>
 </table>
 
-#### History:
-
-* `v2.0.0`: Introduced.
-* `v2.24.0`: Added `data-passage` attribute support to `<audio>`, `<source>`, and `<video>` tags.
+#### 版本历史：
+* `v2.0.0`：引入该功能
+* `v2.24.0`：新增对 `<audio>`, `<source>`, `<video>` 标签的 `data-passage` 属性支持
 
 <!-- *********************************************************************** -->
 
