@@ -98,28 +98,28 @@
 <!-- ***************************************************************************
 	Link
 **************************************************************************** -->
-## Link {#markup-link}
+## 链接 {#markup-link}
 
-SugarCube's link markup consists of a required `Link` component and optional `Text` and `Setter` components.
+SugarCube 的链接标记由必需的 `Link` 组件和可选的 `Text`、`Setter` 组件组成。
 
-The `Link` component may be either plain text or any valid TwineScript expression, which will be evaluated early—i.e., when the link is initially processed.  Its value should be the name of a passage or any valid URL to a resource (local or remote).
+`Link` 组件可以是纯文本或任何有效的 TwineScript 表达式（会在链接初始化时解析），其值应为段落名称或有效 URL（本地或远程）。
 
-The optional `Text` component may be either plain text or any valid TwineScript expression, which will be evaluated early—i.e., when the link is initially processed.
+`Text` 组件（可选）可以是纯文本或任何有效的 TwineScript 表达式（会在链接初始化时解析）。
 
-The optional `Setter` component, which only works with passage links, must be a valid [TwineScript expression](#twinescript-expressions), of the [`<<set>>` macro](#macros-macro-set) variety, which will be evaluated late—i.e., when the link is clicked on.  If you need to specify multiple expressions, then they should be separated by semi-colons (`;`)—e.g., `$a to 5; $b to true`.
+`Setter` 组件（仅适用于段落链接，可选）必须是有效的 [TwineScript 表达式](#twinescript-expressions)，格式与 [`<<set>>` 宏](#macros-macro-set)相同（会在点击链接时解析）。如需多个表达式，请用分号分隔（`;`）——例如：`$a to 5; $b to true`。
 
-In addition to the standard pipe separator (`|`) used to separate the `Link` and `Text` components (as seen below), SugarCube also supports the arrow separators (`->` &amp; `<-`).  Particular to the arrow separators, the arrows' direction determines the order of the components, with the arrow always pointing at the `Link` component—i.e., the right arrow works like the pipe separator, `Text->Link`, while the left arrow is reversed, `Link<-Text`.
+除标准管道符 (`|`) 分隔外，SugarCube 还支持箭头分隔符 (`->` & `<-`)。箭头方向决定组件顺序，箭头始终指向 `Link` 组件——右箭头为 `Text->Link`，左箭头为 `Link<-Text`。
 
-<p role="note" class="warning"><b>Warning (Twine&nbsp;2):</b>
-Due to how the Twine&nbsp;2 automatic passage creation feature currently works, using any TwineScript expression for the <code>Link</code> component will cause a passage named after the expression to be created that will need to be deleted.  To avoid this problem, it's suggested that you use the separate argument form of the <a href="#macros-macro-link"><code>&lt;&lt;link&gt;&gt;</code> macro</a> in Twine&nbsp;2 when you need to use an expression.
+<p role="note" class="warning"><b>警告 (Twine&nbsp;2):</b>
+由于 Twine&nbsp;2 的自动段落创建机制，使用表达式作为 <code>Link</code> 组件会生成以表达式命名的冗余段落。建议在 Twine&nbsp;2 中使用 <a href="#macros-macro-link"><code>&lt;&lt;link&gt;&gt;</code> 宏</a>的独立参数形式来避免此问题。
 </p>
 
 <table>
-<caption>For the following examples assume: <code>$go</code> is <code>&quot;Grocery&quot;</code> and <code>$show</code> is <code>&quot;Go buy milk&quot;</code></caption>
+<caption>以下示例假设：<code>$go</code> 为 <code>&quot;Grocery&quot;</code>，<code>$show</code> 为 <code>&quot;Go buy milk&quot;</code></caption>
 <thead>
 	<tr>
-		<th>Syntax</th>
-		<th>Example</th>
+		<th>语法</th>
+		<th>示例</th>
 	</tr>
 </thead>
 <tbody>
