@@ -158,30 +158,30 @@ SugarCube 的链接标记由必需的 `Link` 组件和可选的 `Text`、`Setter
 <!-- ***************************************************************************
 	Image
 **************************************************************************** -->
-## Image {#markup-image}
+## 图片 {#markup-image}
 
-SugarCube's image markup consists of a required `Image` component and optional `Text`, `Link`, and `Setter` components.
+SugarCube 的图片标记由必需的 `Image` 组件和可选的 `Text`、`Link`、`Setter` 组件组成。
 
-The `Image` component may be either plain text or any valid TwineScript expression, which will be evaluated early—i.e., when the link is initially processed.  Its value may be any valid URL to an image resource (local or remote) or the name of a [media (image) passage](#guide-media-passages).
+`Image` 组件可以是纯文本或任何有效的 TwineScript 表达式（会在图片初始化时解析），其值应为图片资源的有效 URL（本地或远程）或[媒体（图片）段落](#guide-media-passages)名称。
 
-The optional `Text` component may be either plain text or any valid TwineScript expression, which will be evaluated early—i.e., when the link is initially processed.  Its value will be used as the alternate (alt) text of the image.
+`Text` 组件（可选）可以是纯文本或任何有效的 TwineScript 表达式（会在图片初始化时解析），其值将作为图片的替代文本（alt 文本）。
 
-The optional `Link` component may be either plain text or any valid TwineScript expression, which will be evaluated early—i.e., when the link is initially processed.  Its value may be the name of a passage or any valid URL to a resource (local or remote).
+`Link` 组件（可选）可以是纯文本或任何有效的 TwineScript 表达式（会在图片初始化时解析），其值应为段落名称或有效 URL（本地或远程）。
 
-The optional `Setter` component, which only works with passage links, must be a valid [TwineScript expression](#twinescript-expressions), of the [`<<set>>` macro](#macros-macro-set) variety, which will be evaluated late—i.e., when the link is clicked on.  If you need to specify multiple expressions, then they should be separated by semi-colons (`;`)—e.g., `$a to 5; $b to true`.
+`Setter` 组件（仅适用于段落链接，可选）必须是有效的 [TwineScript 表达式](#twinescript-expressions)，格式与 [`<<set>>` 宏](#macros-macro-set)相同（会在点击链接时解析）。如需多个表达式，请用分号分隔（`;`）——例如：`$a to 5; $b to true`。
 
-In addition to the standard pipe separator (`|`) used to separate the `Image` and `Text` components (as seen below), SugarCube also supports the arrow separators (`->` &amp; `<-`).  Particular to the arrow separators, the arrows' direction determines the order of the components, with the arrow always pointing at the `Image` component—i.e., the right arrow works like the pipe separator, `Text->Image`, while the left arrow is reversed, `Image<-Text`.
+除标准管道符 (`|`) 分隔外，SugarCube 还支持箭头分隔符 (`->` & `<-`)。箭头方向决定组件顺序，箭头始终指向 `Image` 组件——右箭头为 `Text->Image`，左箭头为 `Image<-Text`。
 
-<p role="note" class="warning"><b>Warning (Twine&nbsp;2):</b>
-Due to how the Twine&nbsp;2 automatic passage creation feature currently works, using any TwineScript expression for the <code>Link</code> component will cause a passage named after the expression to be created that will need to be deleted.  To avoid this problem, it's suggested that you use the separate argument form of the <a href="#macros-macro-link"><code>&lt;&lt;link&gt;&gt;</code> macro</a> in Twine&nbsp;2 when you need to use an expression.
+<p role="note" class="warning"><b>警告 (Twine&nbsp;2):</b>
+由于 Twine&nbsp;2 的自动段落创建机制，使用表达式作为 <code>Link</code> 组件会生成以表达式命名的冗余段落。建议在 Twine&nbsp;2 中使用 <a href="#macros-macro-link"><code>&lt;&lt;link&gt;&gt;</code> 宏</a>的独立参数形式来避免此问题。
 </p>
 
 <table>
-<caption>For the following examples assume: <code>$src</code> is <code>home.png</code>, <code>$go</code> is <code>&quot;Home&quot;</code>, and <code>$show</code> is <code>&quot;Go home&quot;</code></caption>
+<caption>以下示例假设：<code>$src</code> 为 <code>home.png</code>，<code>$go</code> 为 <code>"Home"</code>，<code>$show</code> 为 <code>"Go home"</code></caption>
 <thead>
 	<tr>
-		<th>Syntax</th>
-		<th>Example</th>
+		<th>语法</th>
+		<th>示例</th>
 	</tr>
 </thead>
 <tbody>
@@ -230,17 +230,17 @@ Due to how the Twine&nbsp;2 automatic passage creation feature currently works, 
 </tbody>
 </table>
 
-#### Within stylesheets
+#### 在样式表中
 
-A restricted subset of the image markup, allowing only the `Image` component, may be used within stylesheets—primarily to allow the easy use of [media (image) passages](#guide-media-passages).  For example:
+样式表中可使用图片标记的受限子集，仅允许使用 `Image` 组件——主要是便于使用[媒体（图片）段落](#guide-media-passages)。例如：
 
 ```
-/* Using the external image "forest.png" as the <body> background. */
+/* 使用外部图片 "forest.png" 作为 <body> 背景 */
 body {
 	background-image: [img[forest.png]];
 }
 
-/* Using the image passage "lagoon" as the <body> background. */
+/* 使用媒体段落 "lagoon" 作为 <body> 背景 */
 body {
 	background-image: [img[lagoon]];
 }
