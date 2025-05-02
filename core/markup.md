@@ -413,55 +413,55 @@ HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处
 <!-- ***************************************************************************
 	Heading
 **************************************************************************** -->
-## Heading {#markup-heading}
+## 标题 {#markup-heading}
 
-An exclamation point (`!`) that begins a line defines the heading markup.  It consists of one to six exclamation points, each additional one beyond the first signifying a lesser heading.
+行首的感叹号（`!`）用于定义标题标记。1 到 6 个感叹号分别对应不同层级的标题，数量越多层级越低。
 
 <table>
 <thead>
 	<tr>
-		<th>Type</th>
-		<th>Syntax &amp; Example</th>
-		<th>Rendered As</th>
-		<th>Displays As (<em>roughly</em>)</th>
+		<th>类型</th>
+		<th>语法与示例</th>
+		<th>渲染结果</th>
+		<th>显示效果（<em>大致</em>）</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td>Level 1</td>
-		<td><pre><code>!Level 1 Heading</code></pre></td>
-		<td><pre><code>&lt;h1&gt;Level 1 Heading&lt;/h1&gt;</code></pre></td>
-		<td class="displays"><h1>Level 1 Heading</h1></td>
+		<td>一级标题</td>
+		<td><pre><code>!一级标题</code></pre></td>
+		<td><pre><code>&lt;h1&gt;一级标题&lt;/h1&gt;</code></pre></td>
+		<td class="displays"><h1>一级标题</h1></td>
 	</tr>
 	<tr>
-		<td>Level 2</td>
-		<td><pre><code>!!Level 2 Heading</code></pre></td>
-		<td><pre><code>&lt;h2&gt;Level 2 Heading&lt;/h2&gt;</code></pre></td>
-		<td class="displays"><h2>Level 2 Heading</h2></td>
+		<td>二级标题</td>
+		<td><pre><code>!!二级标题</code></pre></td>
+		<td><pre><code>&lt;h2&gt;二级标题&lt;/h2&gt;</code></pre></td>
+		<td class="displays"><h2>二级标题</h2></td>
 	</tr>
 	<tr>
-		<td>Level 3</td>
-		<td><pre><code>!!!Level 3 Heading</code></pre></td>
-		<td><pre><code>&lt;h3&gt;Level 3 Heading&lt;/h3&gt;</code></pre></td>
-		<td class="displays"><h3>Level 3 Heading</h3></td>
+		<td>三级标题</td>
+		<td><pre><code>!!!三级标题</code></pre></td>
+		<td><pre><code>&lt;h3&gt;三级标题&lt;/h3&gt;</code></pre></td>
+		<td class="displays"><h3>三级标题</h3></td>
 	</tr>
 	<tr>
-		<td>Level 4</td>
-		<td><pre><code>!!!!Level 4 Heading</code></pre></td>
-		<td><pre><code>&lt;h4&gt;Level 4 Heading&lt;/h4&gt;</code></pre></td>
-		<td class="displays"><h4>Level 4 Heading</h4></td>
+		<td>四级标题</td>
+		<td><pre><code>!!!!四级标题</code></pre></td>
+		<td><pre><code>&lt;h4&gt;四级标题&lt;/h4&gt;</code></pre></td>
+		<td class="displays"><h4>四级标题</h4></td>
 	</tr>
 	<tr>
-		<td>Level 5</td>
-		<td><pre><code>!!!!!Level 5 Heading</code></pre></td>
-		<td><pre><code>&lt;h5&gt;Level 5 Heading&lt;/h5&gt;</code></pre></td>
-		<td class="displays"><h5>Level 5 Heading</h5></td>
+		<td>五级标题</td>
+		<td><pre><code>!!!!!五级标题</code></pre></td>
+		<td><pre><code>&lt;h5&gt;五级标题&lt;/h5&gt;</code></pre></td>
+		<td class="displays"><h5>五级标题</h5></td>
 	</tr>
 	<tr>
-		<td>Level 6</td>
-		<td><pre><code>!!!!!!Level 6 Heading</code></pre></td>
-		<td><pre><code>&lt;h6&gt;Level 6 Heading&lt;/h6&gt;</code></pre></td>
-		<td class="displays"><h6>Level 6 Heading</h6></td>
+		<td>六级标题</td>
+		<td><pre><code>!!!!!!六级标题</code></pre></td>
+		<td><pre><code>&lt;h6&gt;六级标题&lt;/h6&gt;</code></pre></td>
+		<td class="displays"><h6>六级标题</h6></td>
 	</tr>
 </tbody>
 </table>
