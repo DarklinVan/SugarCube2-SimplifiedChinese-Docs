@@ -375,38 +375,38 @@ HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处
 <!-- ***************************************************************************
 	Line Continuation
 **************************************************************************** -->
-## Line Continuation {#markup-line-continuation}
+## 行继续标记 {#markup-line-continuation}
 
-<p role="note" class="see"><b>See Also:</b>
-The various no-break features—<a href="#macros-macro-nobr"><code>&lt;&lt;nobr&gt;&gt;</code> macro</a>, <a href="#special-tag-nobr"><code>nobr</code> special tag</a>, and <a href="#config-api-property-passages-nobr"><code>Config.passages.nobr</code> setting</a>—all perform a similar, though slightly different, function.
+<p role="note" class="see"><b>相关参考：</b>
+各类无间断功能——<a href="#macros-macro-nobr"><code>&lt;&lt;nobr&gt;&gt;</code> 宏</a>、<a href="#special-tag-nobr"><code>nobr</code> 特殊标签</a>和<a href="#config-api-property-passages-nobr"><code>Config.passages.nobr</code> 设置</a>——均提供类似但略有差异的功能。
 </p>
 
-<p role="note" class="warning"><b>Warning:</b>
-Line continuations, or any markup that relies on line positioning, are incompatible with the no-break features because of how the latter function.
+<p role="note" class="warning"><b>注意：</b>
+行继续标记（或任何依赖行定位的标记）与无间断功能不兼容，因其工作原理存在冲突。
 </p>
 
-A backslash (`\`) that begins or ends a line is the line continuation markup.  Upon processing the backslash, associated line break, and all whitespace between them are removed—thus, joining the nearby lines together.  This is mostly useful for controlling whitespace when you want to wrap lines for readability, but not generate extra whitespace upon display, and the [`<<silently>>` macro](#macros-macro-silently) isn't an option because you need to generate output.
+行首或行尾的反斜杠（`\`）即行继续标记。处理时会移除反斜杠、关联的换行符及两者间的所有空格——从而实现多行内容的无缝拼接。此功能主要用于需要换行排版提升可读性，但又不想在显示时产生额外空格的场景，当需要输出内容时可用此替代无法使用的[`<<silently>>` 宏](#macros-macro-silently)。
 
-For example, all of the following: (n.b., `·` represents whitespace that will be removed, `¬` represents line breaks)
-
-```
-The rain in Spain falls \¬
-mainly on the plain.
-
-The rain in Spain falls \····¬
-mainly on the plain.
-
-The rain in Spain falls¬
-\ mainly on the plain.
-
-The rain in Spain falls¬
-····\ mainly on the plain.
-```
-
-Yield the single line in the final output:
+例如以下写法（注：`·`表示将被移除的空格，`¬`表示换行符）：
 
 ```
-The rain in Spain falls mainly on the plain.
+西班牙的降水 \¬
+主要集中在平原.
+
+西班牙的降水 \····¬
+主要集中在平原.
+
+西班牙的降水¬
+\ 主要集中在平原.
+
+西班牙的降水¬
+····\ 主要集中在平原.
+```
+
+在最终输出中将会输出此行:
+
+```
+西班牙的降水主要集中在平原.
 ```
 
 
