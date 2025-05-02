@@ -322,44 +322,44 @@ SugarCube 提供了一些特殊的 HTML 和 SVG 属性，您可以将它们添�
 
 <!-- *********************************************************************** -->
 
-### Attribute Directive<!-- legacy --><span id="markup-html-attribute-directive"></span><!-- /legacy --> {#markup-html-svg-attribute-directive}
+### 属性指令<!-- legacy --><span id="markup-html-attribute-directive"></span><!-- /legacy --> {#markup-html-svg-attribute-directive}
 
-HTML &amp; SVG attributes may be prefixed with directives, special text, which trigger special processing of such attributes.
+HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处理。
 
 <dl>
-<dt>Evaluation directive: <code>sc-eval:</code>, <code>@</code></dt>
+<dt>求值指令：<code>sc-eval:</code>, <code>@</code></dt>
 <dd>
-	<p>	The evaluation directive causes the attribute's value to be evaluated as TwineScript.  Post-evaluation, the directive will be removed from the attribute's name and the result of the evaluation will be used as the actual value of the attribute.</p>
-	<p role="note" class="warning"><b>Warning:</b>
-	The evaluation directive is not allowed on the <a href="#markup-html-svg-attribute-special"><code>data-setter</code> attribute</a>—as its function is to evaluate its contents upon activation of its own element—and any such attempt will cause an error.
+	<p>此指令会将属性值作为 TwineScript 表达式进行求值。处理后，指令前缀将从属性名中移除，求值结果将作为属性实际值。</p>
+	<p role="note" class="warning"><b>警告：</b>
+	<a href="#markup-html-svg-attribute-special"><code>data-setter</code> 属性</a>禁止使用求值指令（因其功能是在元素激活时求值内容），尝试使用将导致错误。
 	</p>
 	<table>
-	<caption>For the following examples assume: <code>_id</code> is <code>&quot;foo&quot;</code></caption>
+	<caption>以下示例假设：<code>_id</code> 为 <code>&quot;foo&quot;</code></caption>
 	<thead>
 		<tr>
-			<th>Syntax</th>
-			<th>Example</th>
-			<th>Rendered As</th>
+			<th>语法</th>
+			<th>示例</th>
+			<th>渲染结果</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td><pre><code>sc-eval:<i>attribute-name</i></code></pre></td>
+			<td><pre><code>sc-eval:<i>属性名</i></code></pre></td>
 			<td><pre><code>&lt;span sc-eval:id=&quot;_id&quot;&gt;…&lt;/span&gt;</code></pre></td>
 			<td><pre><code>&lt;span id=&quot;foo&quot;&gt;…&lt;/span&gt;</code></pre></td>
 		</tr>
 		<tr>
-			<td><pre><code>sc-eval:<i>attribute-name</i></code></pre></td>
+			<td><pre><code>sc-eval:<i>属性名</i></code></pre></td>
 			<td><pre><code>&lt;span sc-eval:id=&quot;'pre-' + _id + '-suf'&quot;&gt;…&lt;/span&gt;</code></pre></td>
 			<td><pre><code>&lt;span id=&quot;pre-foo-suf&quot;&gt;…&lt;/span&gt;</code></pre></td>
 		</tr>
 		<tr>
-			<td><pre><code>@<i>attribute-name</i></code></pre></td>
+			<td><pre><code>@<i>属性名</i></code></pre></td>
 			<td><pre><code>&lt;span @id=&quot;_id&quot;&gt;…&lt;/span&gt;</code></pre></td>
 			<td><pre><code>&lt;span id=&quot;foo&quot;&gt;…&lt;/span&gt;</code></pre></td>
 		</tr>
 		<tr>
-			<td><pre><code>@<i>attribute-name</i></code></pre></td>
+			<td><pre><code>@<i>属性名</i></code></pre></td>
 			<td><pre><code>&lt;span @id=&quot;'pre-' + _id + '-suf'&quot;&gt;…&lt;/span&gt;</code></pre></td>
 			<td><pre><code>&lt;span id=&quot;pre-foo-suf&quot;&gt;…&lt;/span&gt;</code></pre></td>
 		</tr>
@@ -368,11 +368,9 @@ HTML &amp; SVG attributes may be prefixed with directives, special text, which t
 </dd>
 </dl>
 
-#### History:
-
-* `v2.21.0`: Introduced.
-* `v2.23.5`: Fixed an issue with the evaluation directive where using multiple directives on a single HTML tag would result in some being unprocessed.
-
+#### 版本历史：
+* `v2.21.0`: 引入该功能
+* `v2.23.5`: 修复了单个 HTML 标签使用多个指令时部分未处理的问题
 
 <!-- ***************************************************************************
 	Line Continuation
