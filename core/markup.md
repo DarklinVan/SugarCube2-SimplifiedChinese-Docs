@@ -470,61 +470,60 @@ HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处
 <!-- ***************************************************************************
 	Style
 **************************************************************************** -->
-## Style {#markup-style}
+## 样式 {#markup-style}
 
-<p role="note" class="warning"><b>Warning:</b>
-Because the style markups use the same tokens to begin and end each markup, the same style cannot be nested within itself.
+<p role="note" class="warning"><b>注意：</b>
+由于样式标记使用相同符号作为起止符，同类型样式不能嵌套使用。
 </p>
 
 <table>
 <thead>
 	<tr>
-		<th>Type</th>
-		<th>Syntax &amp; Example</th>
-		<th>Rendered As</th>
-		<th>Displays As (<em>roughly</em>)</th>
+		<th>类型</th>
+		<th>语法与示例</th>
+		<th>渲染结果</th>
+		<th>显示效果（<em>大致</em>）</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td>Emphasis</td>
-		<td><pre><code>//Emphasis//</code></pre></td>
-		<td><pre><code>&lt;em&gt;Emphasis&lt;/em&gt;</code></pre></td>
-		<td class="displays"><em>Emphasis</em></td>
+		<td>强调</td>
+		<td><pre><code>//强调//</code></pre></td>
+		<td><pre><code>&lt;em&gt;强调&lt;/em&gt;</code></pre></td>
+		<td class="displays"><em>强调</em></td>
 	</tr>
 	<tr>
-		<td>Strong</td>
-		<td><pre><code>''Strong''</code></pre></td>
-		<td><pre><code>&lt;strong&gt;Strong&lt;/strong&gt;</code></pre></td>
-		<td class="displays"><strong>Strong</strong></td>
+		<td>加粗</td>
+		<td><pre><code>''加粗''</code></pre></td>
+		<td><pre><code>&lt;strong&gt;加粗&lt;/strong&gt;</code></pre></td>
+		<td class="displays"><strong>加粗</strong></td>
 	</tr>
 	<tr>
-		<td>Underline</td>
-		<td><pre><code>__Underline__</code></pre></td>
-		<td><pre><code>&lt;u&gt;Underline&lt;/u&gt;</code></pre></td>
-		<td class="displays"><u>Underline</u></td>
+		<td>下划线</td>
+		<td><pre><code>__下划线__</code></pre></td>
+		<td><pre><code>&lt;u&gt;下划线&lt;/u&gt;</code></pre></td>
+		<td class="displays"><u>下划线</u></td>
 	</tr>
 	<tr>
-		<td>Strikethrough</td>
-		<td><pre><code>==Strikethrough==</code></pre></td>
-		<td><pre><code>&lt;s&gt;Strikethrough&lt;/s&gt;</code></pre></td>
-		<td class="displays"><s>Strikethrough</s></td>
+		<td>删除线</td>
+		<td><pre><code>==删除线==</code></pre></td>
+		<td><pre><code>&lt;s&gt;删除线&lt;/s&gt;</code></pre></td>
+		<td class="displays"><s>删除线</s></td>
 	</tr>
 	<tr>
-		<td>Superscript</td>
-		<td><pre><code>Super^^script^^</code></pre></td>
-		<td><pre><code>Super&lt;sup&gt;script&lt;/sup&gt;</code></pre></td>
-		<td class="displays">Super<sup>script</sup></td>
+		<td>上标</td>
+		<td><pre><code>文字^^上标^^</code></pre></td>
+		<td><pre><code>文字&lt;sup&gt;上标&lt;/sup&gt;</code></pre></td>
+		<td class="displays">文字<sup>上标</sup></td>
 	</tr>
 	<tr>
-		<td>Subscript</td>
-		<td><pre><code>Sub~~script~~</code></pre></td>
-		<td><pre><code>Sub&lt;sub&gt;script&lt;/sub&gt;</code></pre></td>
-		<td class="displays">Sub<sub>script</sub></td>
+		<td>下标</td>
+		<td><pre><code>文字~~下标~~</code></pre></td>
+		<td><pre><code>文字&lt;sub&gt;下标&lt;/sub&gt;</code></pre></td>
+		<td class="displays">文字<sub>下标</sub></td>
 	</tr>
 </tbody>
 </table>
-
 
 <!-- ***************************************************************************
 	List
