@@ -561,23 +561,23 @@ HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处
 <!-- ***************************************************************************
 	Blockquote
 **************************************************************************** -->
-## Blockquote {#markup-blockquote}
+## 块引用 {#markup-blockquote}
 
-A right angle bracket (`>`) that begins a line defines the blockquote markup.  It consists of one or more right angle brackets, each additional one beyond the first signifying a level of nested blockquote.
+行首的右尖括号（`>`）用于定义块引用标记。多个右尖括号表示嵌套的块引用层级。
 
 <table>
 <thead>
 	<tr>
-		<th>Syntax &amp; Example</th>
-		<th>Rendered As</th>
-		<th>Displays As (<em>roughly</em>)</th>
+		<th>语法与示例</th>
+		<th>渲染结果</th>
+		<th>显示效果（<em>大致</em>）</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td><pre><code>&gt;Line&nbsp;1<br>&gt;Line&nbsp;2<br>&gt;&gt;Nested&nbsp;1<br>&gt;&gt;Nested&nbsp;2</code></pre></td>
-		<td><pre><code>&lt;blockquote&gt;Line&nbsp;1&lt;br&gt;<br>Line&nbsp;2&lt;br&gt;<br>&lt;blockquote&gt;Nested&nbsp;1&lt;br&gt;<br>Nested&nbsp;2&lt;br&gt;<br>&lt;/blockquote&gt;&lt;/blockquote&gt;</code></pre></td>
-		<td class="displays"><blockquote>Line&nbsp;1<br>Line&nbsp;2<br><blockquote>Nested&nbsp;1<br>Nested&nbsp;2<br></blockquote></blockquote></td>
+		<td><pre><code>&gt;第一行<br>&gt;第二行<br>&gt;&gt;嵌套第一层<br>&gt;&gt;嵌套第二层</code></pre></td>
+		<td><pre><code>&lt;blockquote&gt;第一行&lt;br&gt;<br>第二行&lt;br&gt;<br>&lt;blockquote&gt;嵌套第一层&lt;br&gt;<br>嵌套第二层&lt;br&gt;<br>&lt;/blockquote&gt;&lt;/blockquote&gt;</code></pre></td>
+		<td class="displays"><blockquote>第一行<br>第二行<br><blockquote>嵌套第一层<br>嵌套第二层<br></blockquote></blockquote></td>
 	</tr>
 </tbody>
 </table>
