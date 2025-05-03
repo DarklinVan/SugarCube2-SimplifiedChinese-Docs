@@ -528,31 +528,31 @@ HTML和SVG 属性可通过添加指令前缀（特殊文本）来触发特殊处
 <!-- ***************************************************************************
 	List
 **************************************************************************** -->
-## List {#markup-list}
+## 列表 {#markup-list}
 
-An asterisk (`*`) or number sign (`#`) that begins a line defines a member of the unordered or ordered list markup, respectively.
+行首的星号（`*`）或井号（`#`）分别用于定义无序列表和有序列表的成员项。
 
 <table>
 <thead>
 	<tr>
-		<th>Type</th>
-		<th>Syntax &amp; Example</th>
-		<th>Rendered As</th>
-		<th>Displays As (<em>roughly</em>)</th>
+		<th>类型</th>
+		<th>语法与示例</th>
+		<th>渲染结果</th>
+		<th>显示效果（<em>大致</em>）</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-		<td>Unordered</td>
-		<td><pre><code>* A&nbsp;list&nbsp;item<br>* Another&nbsp;list&nbsp;item</code></pre></td>
-		<td><pre><code>&lt;ul&gt;<br>&lt;li&gt;A&nbsp;list&nbsp;item&lt;/li&gt;<br>&lt;li&gt;Another&nbsp;list&nbsp;item&lt;/li&gt;<br>&lt;/ul&gt;</code></pre></td>
-		<td class="displays"><ul><li>A&nbsp;list&nbsp;item</li><li>Another&nbsp;list&nbsp;item</li></ul></td>
+		<td>无序列表</td>
+		<td><pre><code>* 列表项<br>* 另一个列表项</code></pre></td>
+		<td><pre><code>&lt;ul&gt;<br>&lt;li&gt;列表项&lt;/li&gt;<br>&lt;li&gt;另一个列表项&lt;/li&gt;<br>&lt;/ul&gt;</code></pre></td>
+		<td class="displays"><ul><li>列表项</li><li>另一个列表项</li></ul></td>
 	</tr>
 	<tr>
-		<td>Ordered</td>
-		<td><pre><code># A&nbsp;list&nbsp;item<br># Another&nbsp;list&nbsp;item</code></pre></td>
-		<td><pre><code>&lt;ol&gt;<br>&lt;li&gt;A&nbsp;list&nbsp;item&lt;/li&gt;<br>&lt;li&gt;Another&nbsp;list&nbsp;item&lt;/li&gt;<br>&lt;/ol&gt;</code></pre></td>
-		<td class="displays"><ol><li>A&nbsp;list&nbsp;item</li><li>Another&nbsp;list&nbsp;item</li></ol></td>
+		<td>有序列表</td>
+		<td><pre><code># 列表项<br># 另一个列表项</code></pre></td>
+		<td><pre><code>&lt;ol&gt;<br>&lt;li&gt;列表项&lt;/li&gt;<br>&lt;li&gt;另一个列表项&lt;/li&gt;<br>&lt;/ol&gt;</code></pre></td>
+		<td class="displays"><ol><li>列表项</li><li>另一个列表项</li></ol></td>
 	</tr>
 </tbody>
 </table>
